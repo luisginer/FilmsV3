@@ -3,7 +3,7 @@ const Usuario = require(__dirname + '/../models/usuario');
 const SHA256 = require('crypto-js/sha256');
 
 mongoose.connect(
-    'mongodb://149.202.43.66:27017:27017/FilmES_v3', {useNewUrlParser: true, useUnifiedTopology: true}
+    'mongodb://localhost:27017/FilmES_v3', {useNewUrlParser: true, useUnifiedTopology: true}
 );
 
 Usuario.collection.drop();
