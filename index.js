@@ -10,7 +10,7 @@ const public = require(__dirname + '/routes/public');
 const directores = require(__dirname + '/routes/directores');
 
 mongoose.connect(
-    'mongodb://149.202.43.66:27017/FilmES_v3', {useNewUrlParser: true, useUnifiedTopology: true}
+    'mongodb://localhost:27017/FilmES_v3', {useNewUrlParser: true, useUnifiedTopology: true}
 );
 
 let app = express();
