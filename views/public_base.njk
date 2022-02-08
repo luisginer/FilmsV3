@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{% block titulo %}FilmES v3{% endblock %}</title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/public/css/estilos.css"/>
+    </head>
+    <body>
+        <header>
+            {% block menu %}
+                <nav class="alert alert-secondary">
+                    <a class="btn btn-dark" href="/">Inicio</a>
+                    {% if (session and session.login) %}
+                        <a class="btn btn-dark" href="/admin">Administracion</a>
+                        <a class="btn btn-dark" href="/auth/logout">Logout</a>
+                    {% else %}
+                        <a class="btn btn-dark" href="/auth/login">Administrador</a> 
+                    {% endif %}
+                    
+                </nav>
+            {% endblock %}
+        </header>
+        <div class="container">
+            {% block contenido %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

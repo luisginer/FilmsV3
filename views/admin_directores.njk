@@ -1,0 +1,27 @@
+{% extends "admin_base.njk" %}
+
+{% block titulo %}Directores | Listado{% endblock %}
+{% block contenido %}
+    <h1>Listado de directores</h1>
+    <hr>
+    <table width="100%">
+        {% for director in directores %}
+            <tr>
+                {% if loop.index % 2 == 0 %}
+                    <td class="par">{{ director.nombre }}</td>
+                {% else %}
+                    <td class="impar">{{ director.nombre }}</td>
+                {% endif %}
+                <td>
+                    <form style="display:inline" action="/directores/{{ director.id }}" method="post">
+                        <a class="btn btn-success" href="/directores/editar/{{ director.id }}">Editar</a>
+                        <input type="hidden" name="_method" value="delete" />
+                        <button type="submit" class="btn btn-danger">Borrar</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a class="btn btn-dark" id="insertarDirector" href="/directores/nuevo">Insertar nueva director</a>
+{% endblock %}
